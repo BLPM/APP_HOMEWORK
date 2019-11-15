@@ -42,3 +42,57 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package com.example.myapplication;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
+
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.fragment.app.FragmentManager;
+        import androidx.fragment.app.FragmentTransaction;
+
+public class MainActivity extends AppCompatActivity {
+
+    FragmentManager fragmentManager =  getSupportFragmentManager();
+    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+    Button btn ;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.TT:
+                Fragment1 fragment1 = new Fragment1();
+                fragmentTransaction.replace(R.id.container, fragment1, "HOME");
+
+                break;
+
+        }
+
+        fragmentTransaction.commit();
+    }
+
+
+}

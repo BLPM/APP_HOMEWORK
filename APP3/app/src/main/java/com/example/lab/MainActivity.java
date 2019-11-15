@@ -3,6 +3,8 @@ package com.example.lab;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -13,12 +15,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btn = findViewById(R.id.button);
+
+
         btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -48,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             dialog.show();
-
-
-
             }
         });
     }
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater=getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast,(ViewGroup)findViewById(R.id.custom_toast_root));
         toast.setView(layout);
-        showToast();
+        toast.show();
     }
 
     private void showListDialog()
